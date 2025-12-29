@@ -1,0 +1,1 @@
+WELCOME_TEXT="Its contained application"
