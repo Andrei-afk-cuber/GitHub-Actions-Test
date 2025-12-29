@@ -19,3 +19,14 @@ jobs:
         run: pip install -r requirements.txt
       - name: pytest
         run: pytest
+
+  # второй job для запуска
+  flask:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: flask
+        run: python app.py
