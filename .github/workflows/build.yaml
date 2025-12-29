@@ -1,5 +1,8 @@
 name: Build
-on: push
+on:
+  # Только при push в master
+  push:
+    branches: [master]
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
