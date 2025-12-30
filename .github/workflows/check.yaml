@@ -1,11 +1,12 @@
 name: Check
 on: [push]
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout
-      uses: actions/checkout@v3
-    - name: depens
-      run: pip install -r requirements.txt
-    - name: run tests
-      run: pytest
+  Pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: depens
+        run: pip install -r requirements.txt
+      - name: run tests
+        run: pytest
