@@ -1,22 +1,11 @@
-# задаем название
 name: Check
-# задем триггер для workflow
-on: push
-# список job-ов, которые будут выполняться при push
+on: [push]
 jobs:
-  # имя для job
-  pytest:
-    # указываем на чем будет запускаться (runner - берется с ресурсов GitHub)
-    runs-on: ubuntu-latest
-    # указываем шаги
-    steps:
-      # добавляем код из репозитория в среду runner-a
-      - name: Checkout
-      # используем уже существующий actions
-        uses: actions/checkout@v3
-      # устанавливаем зависимости
-      - name: Install dependencies
-        # выполняем команду в окружении из runs-on
-        run: pip install -r requirements.txt
-      - name: pytest
-        run: pytest
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: depens
+      run: pip install -r requirements.txt
+    - name: run tests
+      run: pytest
